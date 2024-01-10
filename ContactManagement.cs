@@ -47,7 +47,7 @@ namespace ContactManagement
         // *) Event Button "Add"
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            // Assurez-vous que tous les champs obligatoires sont renseignés
+            // Message pour Assurez que tous les champs obligatoires sont renseignés
             if (string.IsNullOrEmpty(txtboxFirstName.Text) || string.IsNullOrEmpty(txtboxLastName.Text) || string.IsNullOrEmpty(txtBoxContactNumber.Text) || string.IsNullOrEmpty(txtBoxAddress.Text) || string.IsNullOrEmpty(cmbGender.Text))
             {
                 MessageBox.Show("Veuillez remplir tous les champs obligatoires.");
@@ -120,7 +120,7 @@ namespace ContactManagement
             c.Address = txtBoxAddress.Text;
             c.Gender = cmbGender.Text;
 
-            // Testing Data in the consol 
+            // Test donnée sur consol 
             /*Console.WriteLine("ContactID: " + txtboxContactID.Text);
             Console.WriteLine("FirstName: " + txtboxFirstName.Text);
             Console.WriteLine("LastName: " + txtboxLastName.Text);
@@ -133,7 +133,7 @@ namespace ContactManagement
             bool success = c.Update(c);
             if(success==true)
             {
-                //updated successfully
+                //Message updated successfully
                 MessageBox.Show("Contact has been sucessfully updated.");
 
                 //Afficher la liste des contacts dans la DataGridView
@@ -145,7 +145,7 @@ namespace ContactManagement
             }
             else
             {
-                //Failed to update
+                //Message Failed to update
                 MessageBox.Show("Failed to Update Contact.Tray Again.");
             }
         }
@@ -153,7 +153,7 @@ namespace ContactManagement
         // *)Event lorsque on clique sur la ligne qui l'on peut le modifier il affiche le contenue de la ligne dans les champs correspondants
         private void dgvContactList_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            //Get Data from data Grid View load it to the textboxes respectively
+            
             //identify the row on which mouse is clicked
             int rowIndex = e.RowIndex;
             txtboxContactID.Text = dgvContactList.Rows[rowIndex].Cells[0].Value.ToString();
